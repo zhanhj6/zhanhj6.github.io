@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>gradle打包讲解 | 法炼的进阶之旅</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="说明：本教程实战环境为win10系统+AndroidStudio(简称AS)3.4 AS作为安卓开发的IDE使用gradle进行管理，在AS使用gradle的指令即可以使用命令行的方式，也可以在gradle界面直接双击对应的task。本教程主要使用界面的方式实现gradle打包。在使用界面方式实现gradle打包之前认识一下AS中的gradle的界面，如下图：">
+  <meta name="description" content="说明：本教程实战环境为win10系统+AndroidStudio(简称AS)3.4  AS作为安卓开发的IDE使用gradle进行管理，在AS使用gradle的指令即可以使用命令行的方式，也可以在gradle的图形化界面直接双击对应的task。本教程主要使用图形化界面的方式实现gradle打包。在使用图形化界面方式实现gradle打包之前认识一下AS中的gradle的图形化界面。点击最右边的Gr">
 <meta name="keywords" content="安卓,gradle打包">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gradle打包讲解">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;28&#x2F;gradle%E6%89%93%E5%8C%85%E8%AE%B2%E8%A7%A3&#x2F;index.html">
 <meta property="og:site_name" content="法炼的进阶之旅">
-<meta property="og:description" content="说明：本教程实战环境为win10系统+AndroidStudio(简称AS)3.4 AS作为安卓开发的IDE使用gradle进行管理，在AS使用gradle的指令即可以使用命令行的方式，也可以在gradle界面直接双击对应的task。本教程主要使用界面的方式实现gradle打包。在使用界面方式实现gradle打包之前认识一下AS中的gradle的界面，如下图：">
+<meta property="og:description" content="说明：本教程实战环境为win10系统+AndroidStudio(简称AS)3.4  AS作为安卓开发的IDE使用gradle进行管理，在AS使用gradle的指令即可以使用命令行的方式，也可以在gradle的图形化界面直接双击对应的task。本教程主要使用图形化界面的方式实现gradle打包。在使用图形化界面方式实现gradle打包之前认识一下AS中的gradle的图形化界面。点击最右边的Gr">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;gradle%E6%89%93%E5%8C%85&#x2F;gradleTask.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;gradle%E6%89%93%E5%8C%85&#x2F;signConfig01.png">
@@ -26,7 +26,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;gradle%E6%89%93%E5%8C%85&#x2F;signConfig07.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;gradle%E6%89%93%E5%8C%85&#x2F;signConfig08.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;gradle%E6%89%93%E5%8C%85&#x2F;signConfig09.png">
-<meta property="og:updated_time" content="2019-10-29T07:55:53.478Z">
+<meta property="og:updated_time" content="2019-10-29T11:12:02.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;gradle%E6%89%93%E5%8C%85&#x2F;gradleTask.png">
   
@@ -197,7 +197,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">670字</span>
+        <span class="post-count">753字</span>
       </span>
     </span>
 
@@ -217,8 +217,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>说明：本教程实战环境为win10系统+AndroidStudio(简称AS)3.4</p>
-<p>AS作为安卓开发的IDE使用gradle进行管理，在AS使用gradle的指令即可以使用命令行的方式，也可以在gradle界面直接双击对应的task。本教程主要使用界面的方式实现gradle打包。在使用界面方式实现gradle打包之前认识一下AS中的gradle的界面，如下图：</p>
+        <ul>
+<li><strong><em>说明：本教程实战环境为win10系统+AndroidStudio(简称AS)3.4</em></strong></li>
+</ul>
+<p>AS作为安卓开发的IDE使用gradle进行管理，在AS使用gradle的指令即可以使用命令行的方式，也可以在gradle的图形化界面直接双击对应的task。本教程主要使用图形化界面的方式实现gradle打包。在使用图形化界面方式实现gradle打包之前认识一下AS中的gradle的图形化界面。点击最右边的Gradle按钮，出现gradle的图形化界面，如下图：</p>
 <a id="more"></a>
 
 <p><img src="/img/gradle%E6%89%93%E5%8C%85/gradleTask.png" alt="img"></p>
@@ -259,6 +261,9 @@
 <p><img src="/img/gradle%E6%89%93%E5%8C%85/signConfig06.png" alt="img"></p>
 <p>此时AS也会编译生成一个release版本的apk，但执行前面可以生成release版本apk的task时，生成的apk还是未签名的，下次要生成带签名的release版本的apk时，又要重新执行前面的步骤，当然签名文件可以复用，不用重新编写。</p>
 <p>想要通过双击task一键生成带签名的release版本的apk只要将前面的签名文件信息配置在主moudle的gradle配置文件中即可，步骤如下：</p>
+<ul>
+<li><strong><em>注意：前面方式生成的签名文件如果不在项目根目录的app目录下，需将该文件转移到项目根目录的app目录下再进行下面步骤</em></strong></li>
+</ul>
 <p>1)      在主moudle的gradle配置文件中的android领域中填写如下信息</p>
 <p><img src="/img/gradle%E6%89%93%E5%8C%85/signConfig07.png" alt="img"></p>
 <p>2)      在buildType领域中的release领域中添加如下信息</p>
@@ -506,19 +511,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">gradle打包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">录像</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">视频压缩</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">gradle打包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
