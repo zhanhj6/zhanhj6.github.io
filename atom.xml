@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-29T11:12:02.020Z</updated>
+  <updated>2019-10-30T07:51:44.303Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安卓小知识之无线调试和.9图片</title>
+    <link href="http://yoursite.com/2019/10/30/%E5%AE%89%E5%8D%93%E5%B0%8F%E7%9F%A5%E8%AF%86%E4%B9%8B%E6%97%A0%E7%BA%BF%E8%B0%83%E8%AF%95%E5%92%8C.9%E5%9B%BE%E7%89%87/"/>
+    <id>http://yoursite.com/2019/10/30/安卓小知识之无线调试和.9图片/</id>
+    <published>2019-10-30T03:21:05.000Z</published>
+    <updated>2019-10-30T07:51:44.303Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="无线调试"><a href="#无线调试" class="headerlink" title="无线调试"></a>无线调试</h2><p>每次使用USB进行安卓测试的时候都要拔插数据线，而且笔者的手机偶尔出现电脑无法识别手机的情况，这时候还得重启一下手机，实在让人烦不胜烦。今天在阅读安卓书籍的时候发现可以使用无线调试实在令人开心无比，就直接上手实战一番，顺便记录一下遇到的问题。</p><a id="more"></a><ul><li><strong><em>注意：要使用无线调试功能必须保证手机和电脑在同一个局域网中，可以电脑连接手机热点，或者手机连接电脑热点，或者手机、电脑连接同一个热点；并且保证电脑可以ping通手机的ip</em></strong></li></ul><p>第一次进行无线调试时，首先还是需要usb连接电脑，确保电脑已经识别手机，然后电脑打开cmd，进行下图操作（图片为网上资源）：</p><p><img src="/img/%E5%AE%89%E5%8D%93%E5%B0%8F%E7%9F%A5%E8%AF%86/%E6%97%A0%E7%BA%BF%E8%B0%83%E8%AF%95.png" alt="img"></p><ul><li><p>adb devices</p><p>​    显示当前与电脑连接的设备</p></li><li><p>adb tcpip 5555</p><p>​    给要无线连接的手机设置端口，端口号在0—65535之间取值，默认端口号为5555。第一次使用无线连接之前即使采用默认端口也要执行该命令</p></li><li><p>adb connect 192.168.0.104:5555</p><p>​    进行无线连接，192.168.0.104为要无线连接的手机的ip地址，5555为前面设置的端口号</p><p>至此，手机与电脑已经连接成功，可以进行无线调试。当手机要与电脑断开连接时，可以使用adb disconnect 192.168.0.104：5555命令断开连接。</p></li></ul><h2 id="9图片"><a href="#9图片" class="headerlink" title=".9图片"></a>.9图片</h2><p>点9图片是安卓中为处理图片拉伸产生的一种图片格式，AS中集成了处理该格式的功能，使用起来也十分的方便，具体使用步骤如下：</p><ul><li>选中需要处理的图片——》点击鼠标右键——》点击create 9 patch file</li></ul><p><img src="/img/%E5%AE%89%E5%8D%93%E5%B0%8F%E7%9F%A5%E8%AF%86/%E7%82%B99%E5%9B%BE%E7%89%8701.png" alt="img"></p><ul><li><p>双击打开前面创建的点9图片，按照下图操作编辑：</p><p><img src="/img/%E5%AE%89%E5%8D%93%E5%B0%8F%E7%9F%A5%E8%AF%86/%E7%82%B99%E5%9B%BE%E7%89%8702.png" alt="img"></p></li></ul><p>最终效果如下图，可以看到四个圆角并没有因为图片拉伸而变形</p><p><img src="/img/%E5%AE%89%E5%8D%93%E5%B0%8F%E7%9F%A5%E8%AF%86/%E7%82%B99%E5%9B%BE%E7%89%8703.png" alt="img"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;无线调试&quot;&gt;&lt;a href=&quot;#无线调试&quot; class=&quot;headerlink&quot; title=&quot;无线调试&quot;&gt;&lt;/a&gt;无线调试&lt;/h2&gt;&lt;p&gt;每次使用USB进行安卓测试的时候都要拔插数据线，而且笔者的手机偶尔出现电脑无法识别手机的情况，这时候还得重启一下手机，实在让人烦不胜烦。今天在阅读安卓书籍的时候发现可以使用无线调试实在令人开心无比，就直接上手实战一番，顺便记录一下遇到的问题。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="安卓" scheme="http://yoursite.com/tags/%E5%AE%89%E5%8D%93/"/>
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>gradle打包讲解</title>
